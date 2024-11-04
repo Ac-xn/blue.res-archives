@@ -14,34 +14,30 @@
         <nav>
             <img src="adzu-logo.png" alt="ADZU Logo" class="logo">
             <ul>
-             
+                <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-       
+        <!-- Search Bar Section -->
+        <div class="search-bar">
+            <h2>Search Archive</h2>
+            <input type="text" id="searchQuery" placeholder="Enter keywords, title, or author...">
+            <button id="searchButton">Search</button>
+        </div>
 
-     
-            <!-- Search Bar Section -->
-            <div class="search-bar">
-                <h2>Search Archive</h2>
-                <input type="text" id="searchQuery" placeholder="Enter keywords, title, or author...">
-                <button id="searchButton">Search</button>
-            </div>
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <h2>Upload Research Paper</h2>
+            <input type="file" id="fileUpload" accept=".pdf,.doc,.docx">
+            <button id="uploadButton">Upload</button>
+        </div>
 
-            <!-- Upload Section --
-            <div class="upload-section">
-                <h2>Upload Research Paper</h2>
-                <input type="file" id="fileUpload" accept=".pdf,.doc,.docx">
-                <button id="uploadButton">Upload</button>
-            </div>
-
-            <!-- Results Section -->
-            <div class="results" id="results">
-                <h3>Search Results</h3>
-                <p>No results found.</p>
-            </div>
+        <!-- Results Section -->
+        <div class="results" id="results">
+            <h3>Search Results</h3>
+            <p>No results found.</p>
         </div>
     </main>
 
