@@ -3,48 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADZU Research Archive</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        .login-container .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-
-    <header>
-        <h1>Ateneo de Zamboanga University Research Archive</h1>
-        <p>Access and upload research papers with ease</p>
-        <nav>
-            <img src="adzu-logo.png" alt="ADZU Logo" class="logo">
-            <ul>
-             
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-       
-
-     
-            <!-- Search Bar Section -->
-            <div class="search-bar">
-                <h2>Search Archive</h2>
-                <input type="text" id="searchQuery" placeholder="Enter keywords, title, or author...">
-                <button id="searchButton">Search</button>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
             </div>
-
-            <!-- Upload Section --
-            <div class="upload-section">
-                <h2>Upload Research Paper</h2>
-                <input type="file" id="fileUpload" accept=".pdf,.doc,.docx">
-                <button id="uploadButton">Upload</button>
-            </div>
-
-            <!-- Results Section -->
-            <div class="results" id="results">
-                <h3>Search Results</h3>
-                <p>No results found.</p>
-            </div>
-        </div>
-    </main>
-
-    <script src="script.js"></script> <!-- Link to the external JavaScript file -->
+        </form>
+    </div>
 </body>
 </html>
