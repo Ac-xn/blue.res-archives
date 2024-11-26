@@ -1,4 +1,3 @@
-
 // Sample data for demonstration purposes
 const researchArchive = [
     { title: "Flood Preparedness in Barangay Tugbungan", description: "An assessment report focused on flood disaster mitigation and response strategies." },
@@ -45,6 +44,7 @@ function uploadFile() {
         alert("Please select a file to upload.");
     } else {
         alert("File uploaded successfully!");
+        // Here, you would normally send the file to a server.
     }
 }
 
@@ -53,13 +53,19 @@ setTimeout(() => {
     alert("Give feedback to the website!");
 }, 1800000); // 1800000 ms = 30 minutes
 
-// Function to validate login and toggle sections
+// Function to validate login and redirect if successful
 function validateLogin() {
     const emailInput = document.getElementById("email").value;
     const passwordInput = document.getElementById("password").value;
+    const validDomain = "@adzu.edu.ph";
 
     if (emailInput === "" || passwordInput === "") {
         alert("Please enter both email and password.");
+        return;
+    }
+
+    if (!emailInput.endsWith(validDomain)) {
+        alert("Only ADZU emails are allowed.");
         return;
     }
 
@@ -68,20 +74,32 @@ function validateLogin() {
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("userEmail", emailInput);
   
-    // Toggle visibility based on login
-    checkLoginStatus();
+    // Hide the login section and show the upload section
+    document.getElementById("login-section").style.display = "none";
+    document.getElementById("upload-section").style.display = "block";
 }
 
-// Function to check login status on page load
-function checkLoginStatus() {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-    if (isLoggedIn === "true") {
-        document.getElementById("login-section").style.display = "none";
-        document.getElementById("upload-section").style.display = "block";
+function validateLogin() {
+    const emailInput = document.getElementById("email").value;
+    const passwordInput = document.getElementById("password").value;
+    const validDomain = "@adzu.edu.ph";
+  
+    if (emailInput === "" || passwordInput === "") {
+        alert("Please enter both email and password.");
+        return;
     }
-}
-
-// Call checkLoginStatus when the page loads
-window.onload = checkLoginStatus;
-
+  
+    if (!emailInput.endsWith(validDomain)) {
+        alert("Only ADZU emails are allowed.");
+        return;
+    }
+  
+    // Simulate successful login and store login status
+    alert("Login successful!");
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("userEmail", emailInput);
+  
+    // Redirect to the main website (index.html)
+    window.location.href = "index.html";
+  }
+  
